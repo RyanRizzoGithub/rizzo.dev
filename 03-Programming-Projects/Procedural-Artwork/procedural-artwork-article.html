@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procedural Artwork Collection</title>
+  <link rel="stylesheet" href="tree-generator-article.css">
+</head>
+<body>
+<div class="article">
+    
+    <h3 style="color: var(--tertiary-text-color); margin-top: -10px; margin-bottom: -5px;">2022</h3>
+    <h1 class="">Algorithmic Expressions: <span style="font-size: smaller; font-weight: lighter;">Exploring how randomness and rules create cohesion</span></h1>
+
+    <div style="display: flex; gap: 15px;">
+        <a href="https://github.com/RyanRizzoGithub/Generative-Artwork"><button>Source</button></a>
+    </div>
+
+    <section class="">
+        <h2 class="">Introduction</h2>
+        <p><strong><span class="accent">Algorithmic Expressions</span></strong> is a set of generative art programs I developed in <strong><span class="accent">Processing</span></strong>. Each piece demonstrates how code, randomness, recursion, and geometry can come together to produce complex and unique visual patterns.</p>
+        <p>The collection so far includes five distinct models: <em>Displacement</em>, <em>Gyration</em>, <em>MazeTiler</em>, <em>PathFinder</em>, and <em>Recursion</em>. While each follows its own ruleset, they all share the goal of blending <strong><span class="accent">structured systems with controlled randomness</span></strong> to mimic qualities of organic and abstract art.</p>
+    </section>
+
+    <section class="">
+        <h2 class="">Displacement</h2>
+        <p><strong><span class="accent">Displacement</span></strong> fills the canvas with rectangles whose size, color, opacity, and position are slightly randomized. Additional texture is added by layering noise-based circles within each rectangle, giving the result a grainy, tactile quality.</p>
+        <ul>
+            <li><strong>Key Idea:</strong> Offset grids create tension between order and randomness.</li>
+            <li><strong>Visual Effect:</strong> A quilt-like mosaic where colors and textures blend unpredictably.</li>
+        </ul>
+        <img src="/03-Programming-Projects/Procedural-Artwork/images/displacement.jpeg" width="75%" style="margin-left: 10%;">
+    </section>
+
+    <section class="">
+        <h2 class="">Gyration</h2>
+        <p><strong><span class="accent">Gyration</span></strong> uses rotational symmetry to place shapes (ellipses, squares, triangles) in a spiraling pattern around the canvas. Each cycle grows in size and distance, creating a hypnotic vortex of geometry.</p>
+        <ul>
+            <li><strong>Key Idea:</strong> Iterative shape placement with adjustable increments.</li>
+            <li><strong>Visual Effect:</strong> Expanding concentric rings of forms, sometimes appearing kaleidoscopic.</li>
+        </ul>
+        <img src="/03-Programming-Projects/Procedural-Artwork/images/gyration.jpeg" width="75%" style="margin-left: 10%;">
+    </section>
+
+    <section class="">
+        <h2 class="">MazeTiler</h2>
+        <p><strong><span class="accent">MazeTiler</span></strong> divides the canvas into tiles. Within each tile, random diamonds and diagonal lines are drawn, combining to form intricate, maze-like lattices. Each run generates a different maze pattern.</p>
+        <ul>
+            <li><strong>Key Idea:</strong> Local randomness scaled across a tiled grid.</li>
+            <li><strong>Visual Effect:</strong> Geometric tapestries resembling woven fabric or puzzles.</li>
+        </ul>
+        <img src="/03-Programming-Projects/Procedural-Artwork/images/mazetiler.jpeg" width="75%" style="margin-left: 10%;">
+    </section>
+
+    <section class="">
+        <h2 class="">PathFinder</h2>
+        <p><strong><span class="accent">PathFinder</span></strong> simulates wandering lines that avoid previously visited coordinates. Each line makes directional decisions step-by-step, producing branching, labyrinthine pathways.</p>
+        <ul>
+            <li><strong>Key Idea:</strong> Constraint-driven movement across the canvas.</li>
+            <li><strong>Visual Effect:</strong> Abstract cartographic maps, where lines weave through space without overlap.</li>
+        </ul>
+        <img src="/03-Programming-Projects/Procedural-Artwork/images/pathfinder.jpeg" width="75%" style="margin-left: 10%;">
+    </section>
+
+    <section class="">
+        <h2 class="">Recursion</h2>
+        <p><strong><span class="accent">Recursion</span></strong> builds tiles that recursively generate smaller tiles within themselves. Shapes (rectangles, ellipses, triangles) are placed in quadrants, but tiles can also subdivide, leading to deeply nested structures.</p>
+        <ul>
+            <li><strong>Key Idea:</strong> Recursive subdivision drives complexity.</li>
+            <li><strong>Visual Effect:</strong> Fractal-like mosaics that balance structure and unpredictability.</li>
+        </ul>
+        <img src="/03-Programming-Projects/Procedural-Artwork/images/recursion.jpeg" width="75%" style="margin-left: 10%;">
+    </section>
+
+    <section class="">
+        <h2 class="">Conclusion</h2>
+        <p>Together, these five models form a cohesive exploration of generative art techniques. From grids and spirals to mazes and recursion, each project demonstrates how algorithmic systems can produce artwork that feels organic, surprising, and alive.</p>
+        <p>While each sketch can stand on its own, their shared use of <strong><span class="accent">randomness, geometry, and rules</span></strong> highlights the endless creative potential of procedural design.</p>
+    </section>
+
+    <div style="display: flex; gap: 15px;">
+        <a href="https://github.com/RyanRizzoGithub/Generative-Artwork"><button>Source</button></a>
+    </div>
+</div>
+</body>
+</html>
