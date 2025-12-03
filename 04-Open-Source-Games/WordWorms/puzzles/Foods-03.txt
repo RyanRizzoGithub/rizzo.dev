@@ -1,0 +1,29 @@
+S L M O N
+G A S A S
+G S A M O
+E K A E T
+R B A T S
+E P U S A
+A D O S P
+7
+PASTA
+STEAK
+SOUP
+BREAD
+EGGS
+SAMOSA
+SALMON
+5 7 7 7 7
+5 7 7 6 6
+5 6 6 6 6
+5 2 2 2 2
+4 4 1 1 2
+4 3 3 1 1
+4 4 3 3 1
+Traditional Italian staple made from durum wheat, often served with sauce.
+A thick slice of meat (usually beef) cooked by grilling or searing.
+A liquid dish made by simmering ingredients in stock or water.
+A baked staple food made from flour and often some leavening agent
+A versatile protein-rich food produced by birds, used in many recipes.
+A fried or baked pastry with a savory filling popular in South Asia.
+An oily fish commonly grilled, smoked, or used raw in dishes

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbit</title>
+  <link rel="stylesheet" href="orbit-article-style.css">
+</head>
+<body>
+  <div class="article">
+    <h3 style="color: var(--tertiary-text-color); margin-top: -10px; margin-bottom: -5px;">2025</h3>
+    <h1>Orbit: <span style="font-size: smaller; font-weight: lighter;">Rotate, Dodge, Survive</span></h1>
+    
+    <div style="display: flex; gap: 15px;">
+      <a href="04-Open-Source-Games/Orbit/orbit.html" class="btn"><button>Play</button></a>
+      <a href="https://github.com/RyanRizzoGithub/Orbit" class="btn"><button>Source</button></a>
+    </div>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        <strong><span class="accent">Orbit</span></strong> is a fast-paced reflex game built with the 
+        <strong>HTML5 Canvas API</strong>. Players control a small orb that 
+        circles around a center point. With a tap of the 
+        <strong><span class="accent">spacebar</span></strong>, the direction of rotation flips — a simple mechanic 
+        that becomes increasingly difficult as enemies close in.
+      </p>
+      &nbsp;
+      <div style="display: flex; align-items: center; justify-content: center; gap: 4vw; margin-top: 20px;">
+        <img src="04-Open-Source-Games/Orbit/images/demo1.png" alt="Orbit Gameplay Screenshot" width="25%">
+        <img src="04-Open-Source-Games/Orbit/images/demo2.png" alt="Orbit Gameplay Screenshot" width="25%">
+        <img src="04-Open-Source-Games/Orbit/images/demo3.png" alt="Orbit Gameplay Screenshot" width="25%">
+      </div>
+    </section>
+
+    <section>
+      <h2>How the Game Works</h2>
+      <p>
+        Your player orb continuously moves in a circle around the center of the board.  
+        Each press of <strong><span class="accent">spacebar</span></strong> instantly reverses the direction.  
+        <strong><span class="accent">Pawns</span></strong>, <strong><span class="accent">robbers</span></strong>, and <strong><span class="accent">knights</span></strong> spawn from the edges 
+        and rush toward the center. Colliding with any of them ends the run.
+      </p>
+    </section>
+
+    <section id="instructions" class="game-info">
+      <h2>How to Play</h2>
+      <ul>
+        <li><strong><span class="accent">Spacebar</span></strong> → Reverse rotation direction</li>
+        <li><strong><span class="accent">Click</span></strong> menu buttons to choose difficulty</li>
+        <li><strong><span class="accent">Enter</span></strong> → Restart after game over</li>
+      </ul>
+      <p>
+        The longer you survive, the higher your score. Each difficulty increases enemy 
+        types and spawn rates. Try to beat your <strong><span class="accent">high score</span></strong>!
+      </p>
+    </section>
+
+    <section>
+      <h2>Obstacles & Enemies</h2>
+      <ul>
+        <li><strong><span class="accent">Pawns</span></strong> → Slow, steady threats closing from all sides.</li>
+        <li><strong><span class="accent">Robbers</span></strong> → Faster projectiles requiring quick reaction.</li>
+        <li><strong><span class="accent">Knights</span></strong> → The deadliest enemies with blazing speed.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Canvas Rendering</h2>
+      <p>
+        Orbits’s smooth animations are powered by 
+        <code><strong><span class="accent">requestAnimationFrame</span></strong></code>. Enemies shrink the distance between 
+        themselves and the center while the player orb updates its circular position.
+      </p>
+      <pre><code class="language-javascript">
+      function update() {
+          if (gameOver) return;
+          frame++;
+          angle += direction * 0.04;
+          pawns.forEach(pwn => pwn.distance -= 2);
+          robbers.forEach(rob => rob.distance -= 4);
+          knights.forEach(knt => knt.distance -= 6);
+      }
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Game Flow</h2>
+      <p>
+        Players start at the menu screen by choosing a <strong><span class="accent">difficulty</span></strong>. Each mode 
+        alters the spawn rate and speed of enemies. The game ends on collision, 
+        displaying the current score and offering a chance to restart.
+      </p>
+      <pre><code class="language-javascript">
+      function restart() {
+          cancelAnimationFrame(animationId);
+          obstacles = [];
+          robbers = [];
+          knights = [];
+          frame = 0;
+          gameOver = false;
+          score = 0;
+          angle = 0;
+          radius = 100;
+          direction = 1;
+          gameLoop();
+      }
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Coding Challenges</h2>
+      <ul>
+        <li><strong><span class="accent">Managing</span></strong> movement & collision detection.</li>
+        <li><strong><span class="accent">Balancing</span></strong> spawn rates across three enemy types.</li>
+        <li><strong><span class="accent">Responsive</span></strong> difficulty scaling while keeping gameplay fun.</li>
+        <li><strong><span class="accent">Ensuring</span></strong> smooth animations with <code>requestAnimationFrame</code>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Final Thoughts</h2>
+      <p>
+        <strong><span class="accent">Orbit</span></strong> demonstrates how a single input mechanic can create 
+        deep, challenging gameplay. With simple controls and escalating 
+        difficulty, it captures the spirit of arcade reflex games while 
+        remaining easy to pick up and play.
+      </p>
+    </section>
+
+    <div style="display: flex; gap: 15px;">
+      <a href="04-Open-Source-Games/Orbit/orbit.html" class="btn"><button>Play</button></a>
+      <a href="https://github.com/RyanRizzoGithub/Orbit" class="btn"><button>Source</button></a>
+    </div>
+  </div>
+</body>
+<script> hljs.highlightAll(); </script>
+</html>

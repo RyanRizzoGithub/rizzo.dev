@@ -1,0 +1,149 @@
+
+    <div class="article">
+        <h3 style="color: var(--tertiary-text-color); margin-top: -10px; margin-bottom: -5px;">2025</h3>
+        <h1 class="">Word Worms: <span style="font-size: smaller; font-weight: lighter;">A Puzzle Game Built from Scratch</span></h1>
+
+        <div style="display: flex; gap: 15px;">
+            <a href="04-Open-Source-Games/WordWorms/WordWorms.html"><button>Play</button></a>
+            <a href="https://github.com/RyanRizzoGithub/WordWorms"><button>Source</button></a>
+        </div>
+
+        <section class="">
+            <h2 class="">Introduction</h2>
+            <p><strong><span class="accent">Word Worms</span></strong> is an interactive word puzzle game I developed for the web. At first glance, it looks like a simple grid-based word finder, but beneath the surface lies a carefully engineered system of logic, animations, and state management. Each puzzle challenges players to uncover seven hidden words by dragging across adjacent letters in the grid, racing against the clock to solve them all.</p>
+            <p>In this article, I'll explain what makes the game unique and walk through some of the key coding challenges I encountered while building it — along with the solutions that made everything work smoothly.</p>
+        </section>
+
+        <section class="">
+            <h2 class="">How the Game Works</h2>
+            <p>When the game loads, players are presented with a <strong><span class="accent">7x5 letter grid</span></strong>. Each puzzle belongs to a category (such as <em>Car Manufacturers</em>, <em>Sports</em>, or <em>Foods</em>) and contains exactly <strong><span class="accent">seven words</span></strong> to find.</p>
+            <p>Players drag across letters with their mouse to select possible words. The game checks if the sequence matches a hidden word from the puzzle file. If it does, the path lights up in color and the word is crossed off the hints list. If not, the game gives feedback with a small animation, letting players know they're off track.</p>
+            <ul class="">
+            <li>A <strong><span class="accent">hint system</span></strong> players can cycle through.</li>
+            <li>A <strong><span class="accent">timer</span></strong> to measure how quickly puzzles are solved.</li>
+            <li>A <strong><span class="accent">pause/reset menu</span></strong> to manage gameplay flow.</li>
+            <li>A <strong><span class="accent">puzzle selector grid</span></strong> where players can jump into different categories.</li>
+            </ul>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 4vw; margin-top: 20px;">
+                <img src="04-Open-Source-Games/WordWorms/images/demo1.png" style="width: 10vw;">
+                <img src="04-Open-Source-Games/WordWorms/images/demo2.png" style="width: 10vw;">
+                <img src="04-Open-Source-Games/WordWorms/images/demo3.png" style="width: 10vw;">
+            </div>
+            
+        </section>
+
+        <section class="">
+            <h2 class="t">Puzzle Data Management</h2>
+            <p>Each puzzle is stored in a <code>.txt</code> file. The file includes:</p>
+            <ul class="">
+            <li>The <strong><span class="accent">grid of letters</span></strong>.</li>
+            <li>The <strong><span class="accent">key layout</span></strong> (used to validate words).</li>
+            <li>The <strong><span class="accent">list of hidden words</span></strong>.</li>
+            <li>The <strong><span class="accent">corresponding hints</span></strong> for each word.</li>
+            </ul>
+            <p class="">The <code>populateGrid(file)</code> function fetches the puzzle file, splits it into lines, and assigns values into several arrays:</p>
+            <ul class="">
+            <li><code>grid</code> → visible letters.</li>
+            <li><code>key</code> → mapping that links positions to words.</li>
+            <li><code>found</code> → which letters have been solved.</li>
+            <li><code>hints</code> → clues for each hidden word.</li>
+            </ul>
+            <p class="">This modular approach makes it easy to load new puzzle files without changing the core game logic.</p>
+        </section>
+
+        <section class="">
+            <h2 class="">Canvas Rendering &amp; Animations</h2>
+            <p>One of the most enjoyable (and tricky) parts of development was rendering everything with the <strong>HTML5 Canvas API</strong>. Unlike typical DOM-based games, every piece of gameplay — from the grid to the animations — is drawn manually.</p>
+            <p>The <code>draw()</code> function handles:</p>
+            <ul class="">
+            <li>Rendering the title, timer, and status text.</li>
+            <li>Drawing each grid cell with color-coded states (default, selected, found).</li>
+            <li>Animating feedback (zoom for correct, shaking for wrong).</li>
+            </ul>
+            <p class="">For example, the <em>correct word</em> animation works by temporarily increasing the <code>zoom</code> value in small increments:</p>
+            <pre class="">
+                <code>
+            function animateCorrect() {
+                animatingCorrect = true;
+                for (let i=0; i &lt; 50; i++) setTimeout(correctHelper, 5, 1);
+                for (let i=0; i &lt; 50; i++) setTimeout(correctHelper, 5, -1);
+                setTimeout(() =&gt; { animatingCorrect = false; draw(); }, 1000);
+            }
+                </code>
+            </pre>
+            <p>
+            This creates a “pulse” effect, rewarding the player visually when they solve a word.
+            </p>
+        </section>
+
+        <section class="">
+            <h2 class="">Input Handling: Selecting Words with Precision</h2>
+            <p>
+            One of the trickiest challenges was managing <strong><span class="accent">mouse input</span></strong> across the grid. The player must be able to:
+            </p>
+            <ol class="">
+            <li>Start selecting letters on <code>mousedown</code>.</li>
+            <li>Drag across valid adjacent cells while holding the mouse.</li>
+            <li>Release on <code>mouseup</code> to confirm the word.</li>
+            </ol>
+            <p class="">The game tracks selection using arrays like <code>selected</code> and <code>backtracker</code> to remember the order of chosen letters. This prevents issues where players might accidentally revisit letters or move outside the grid.</p>
+            <p class="">A snippet from <code>selectLetter()</code> shows how directions are tracked:</p>
+            <pre class="">
+                <code>
+                if (prevX == column &amp;&amp; prevY &gt; row) { direction = "D"; }
+                else if (prevX == column &amp;&amp; prevY &lt; row) { direction = "U"; }
+                else if (prevX &lt; column &amp;&amp; prevY == row) { direction = 'R'; }
+                else if (prevX &gt; column &amp;&amp; prevY == row) { direction = "L"; }
+                else { direction = "S"; }
+                </code>
+            </pre>
+            <p>This directional system allows the game to “connect the dots” and visually draw paths between letters.</p>
+        </section>
+
+        <section class="">
+            <h2 class="">Timer &amp; Game Flow Control</h2>
+            <p>The <strong><span class="accent">timer system</span></strong> had to handle multiple edge cases:</p>
+            <ul class="">
+                <li>Pausing and resuming correctly.</li>
+                <li>Resetting when a new puzzle loads.</li>
+                <li>Displaying in <code>MM:SS</code> format.</li>
+            </ul>
+            <p class="">The solution was to store a <code>startTime</code> and compute elapsed time dynamically:</p>
+            <pre class=""><code>
+        function startTimer() {
+            if (!timerActive) {
+                startTime = Date.now() - elapsedTime * 1000;
+                timerInterval = setInterval(() =&gt; {
+                    if (paused) { startTime += 1000; }
+                    elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+                    draw();
+                }, 1000);
+            }
+        }</code></pre>
+            <p>This approach ensures that even if a player pauses mid-game, the timer reflects only active playtime.</p>
+        </section>
+
+        <section class="">
+            <h2 class="">Coding Challenges &amp; Solutions</h2>
+            <h3 class="">Challenge 1: Word Validation</h3>
+            <p>At first, checking if a player's selected path matched a word was inconsistent. The fix was to use the <strong><span class="accent">key grid</span></strong> as a reference, ensuring each selected letter aligned with the correct word sequence.</p>
+
+            <h3 class="">Challenge 2: Feedback Animations</h3>
+            <p>Animations caused performance hiccups if not reset properly. The solution was to use boolean flags (<code>animatingCorrect</code>, <code>animatingIncorrect</code>, <code>animatingLocation</code>) that temporarily change rendering states, then reset once the effect completes.</p>
+
+            <h3 class="">Challenge 3: Puzzle Selection System</h3>
+            <p>Switching between puzzles while preserving state required a matrix (<code>finishedPuzzles</code>) to track progress across categories. This gave players a way to see which puzzles were completed without losing progress.</p>
+        </section>
+
+        <section class="">
+            <h2 class="">Final Thoughts</h2>
+            <p>Building <strong><span class="accent">Word Worms</span></strong> was both a creative and technical challenge. From managing puzzle data to handling smooth canvas rendering and precise input tracking, this project taught me how to balance <strong><span class="accent">game design</span></strong>, <strong><span class="accent">code structure</span></strong>, and <strong><span class="accent">user experience</span></strong>.</p>
+            <p class="">If you're interested in experimenting with <strong><span class="accent">JavaScript canvas games</span></strong>, this project is a great starting point — it combines grid-based logic, animations, and real-time interaction in a fun and rewarding package.</p>
+        </section>
+
+        <div style="display: flex; gap: 15px;">
+            <a href="04-Open-Source-Games/WordWorms/WordWorms.html"><button>Play</button></a>
+            <a href="https://github.com/RyanRizzoGithub/WordWorms"><button>Source</button></a>
+        </div>
+        
+    </div>

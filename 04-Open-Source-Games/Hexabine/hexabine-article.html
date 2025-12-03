@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hexabine</title>
+  <link rel="stylesheet" href="hexabine-article-style.css">
+</head>
+<body>
+  <div class="article">
+    <h3 style="color: var(--tertiary-text-color); margin-top: -10px; margin-bottom: -5px;">2025</h3>
+    <h1>Hexabine: <span style="font-size: smaller; font-weight: lighter;">A hexagonal twist on 2048</span></h1>
+    
+    <div style="display: flex; gap: 15px;">
+      <a href="04-Open-Source-Games/Hexabine/hexabine.html" class="btn"><button>Play</button></a>
+      <a href="https://github.com/RyanRizzoGithub/Hexabine" class="btn"><button>Source</button></a>
+    </div>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        <strong><span class="accent">Hexabine</span></strong> is a modern reinterpretation of the classic 
+        puzzle game 2048. Instead of a square grid, tiles live on a 
+        <em>hexagonal board</em>, which creates new movement mechanics and 
+        challenges. Players merge matching numbers by sliding tiles in <strong><span class="accent">six 
+        possible directions</span></strong> instead of four.
+      </p>
+      &nbsp;
+      <div style="display: flex; align-items: center; justify-content: center; gap: 4vw; margin-top: 20px;">
+        <img src="04-Open-Source-Games/Hexabine/images/demo.png" alt="Hexabine Board Screenshot" width="25%">
+        <img src="04-Open-Source-Games/Hexabine/images/demo2.png" alt="Hexabine Board Screenshot" width="25%">
+      </div>
+    </section>
+
+    <section>
+      <h2>How the Game Works</h2>
+      <p>
+        Each turn, the player presses an arrow key(or diagonal combo of keys) 
+        to slide all tiles in that direction. If two tiles of the same value 
+        collide, they <strong><span class="accent">merge</span></strong> into a single tile with double the value. The 
+        <strong><span class="accent">objective</span></strong> is to reach ever higher numbers before the board fills up.
+      </p>
+    </section>
+
+    <section id="instructions" class="game-info">
+      <h2>How to Play</h2>
+      <p>
+        Use the <strong><span class="accent">arrow keys</span></strong> to slide tiles across the hexagonal grid.  
+        You can also combine directions:
+      </p>
+      <ul>
+        <li><strong><span class="accent">Arrow Left</span></strong> → Move Left</li>
+        <li><strong><span class="accent">Arrow Right</span></strong> → Move Right</li>
+        <li><strong><span class="accent">Arrow Left + Arrow Up</span></strong> → Move Up-Left</li>
+        <li><strong><span class="accent">Arrow Right + Arrow Up</span></strong> → Move Up-Right</li>
+        <li><strong><span class="accent">Arrow Left + Arrow Down</span></strong> → Move Down-Left</li>
+        <li><strong><span class="accent">Arrow Right + Arrow Down</span></strong> → Move Down-Right</li>
+      </ul>
+      <p>
+        Tiles with the same number merge when they collide, forming a new tile with double the value.  
+        Plan your moves carefully — every turn spawns a new tile.
+      </p>
+
+      <h2>Objective</h2>
+      <p>
+        The goal of the game is to keep merging tiles until you create the 
+        <strong><span class="accent">2048 tile</span></strong> (or higher!).  
+        Try to achieve the highest score you can before the grid fills up and no more moves are possible.
+      </p>
+    </section>
+
+
+    <section>
+      <h2>Board & Tiles</h2>
+      <p>
+        The game board is a <strong><span class="accent">2D array of hexagonal positions</span></strong>. Each tile knows 
+        its value, grid coordinates, and pixel position on the canvas.
+      </p>
+      <pre><code class="language-javascript">
+      function spawnPiece() {
+          const empties = [];
+          for (let r = 0; r < tileHeight; r++) {
+              for (let c = 0; c < tileWidth; c++) {
+                  if (!grid[r][c]) empties.push([r, c]);
+              }
+          }
+          if (empties.length === 0) return false;
+          const [r, c] = empties[Math.floor(Math.random() * empties.length)];
+          const value = Math.random() < 0.65 ? 2 : 4;
+          makeTile(value, r, c);
+          return true;
+      }
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Canvas Rendering</h2>
+      <p>
+        Rendering uses the HTML5 Canvas API. Tiles <strong><span class="accent">animate</span></strong> smoothly between 
+        positions using <code>requestAnimationFrame</code>.
+      </p>
+      <pre><code class="language-javascript" >
+      function animate() {
+          let anyMoving = false;
+          for (let i = tiles.length - 1; i >= 0; i--) {
+              const t = tiles[i];
+              const targetP = gridToPixel(t.targetRow, t.targetCol);
+              const dx = targetP.x - t.x;
+              const dy = targetP.y - t.y;
+
+              if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) {
+                  t.x += dx * ANIM_SPEED;
+                  t.y += dy * ANIM_SPEED;
+                  t.moving = true;
+                  anyMoving = true;
+              } else {
+                  t.x = targetP.x;
+                  t.y = targetP.y;
+                  t.moving = false;
+                  if (t.willRemove) tiles.splice(i, 1);
+                  else {
+                      grid[t.targetRow][t.targetCol] = t;
+                      t.row = t.targetRow; 
+                      t.col = t.targetCol;
+                  }
+              }
+          }
+          draw();
+          if (anyMoving) requestAnimationFrame(animate);
+          else {
+              animating = false;
+              inputConsumed = false;
+              spawnPiece();
+              if (noMovesAvailable()) gameOver();
+              draw();
+          }
+      }
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Input & Movement</h2>
+      <p>
+        Unlike the original 2048, <strong><span class="accent">Hexabine</span></strong> supports six movement directions. 
+        Input is handled through arrow keys, with diagonal combinations 
+        triggering <strong><span class="accent">diagonal</span></strong> shifts.
+      </p>
+      <pre><code class="language-javascript">
+      const L = !!keysPressed['ArrowLeft'];
+      const R = !!keysPressed['ArrowRight'];
+      const U = !!keysPressed['ArrowUp'];
+      const D = !!keysPressed['ArrowDown'];
+
+      if (L && U) return 'UL';
+      if (R && U) return 'UR';
+      if (L && D) return 'DL';
+      if (R && D) return 'DR';
+      if (L) return 'L';
+      if (R) return 'R';
+      return '';
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Game Flow</h2>
+      <p>
+        At the start of the game, two tiles spawn on the grid. After each 
+        move, <strong><span class="accent">a new tile appears</span></strong>. The game ends when no moves are available.
+      </p>
+      <pre><code class="language-javascript">
+      score = 0;
+      gameover = false;
+      tiles = [];
+      clearGrid();
+      spawnPiece();
+      spawnPiece();
+      draw();
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Coding Challenges</h2>
+      <ul>
+        <li>Managing six movement directions in a <strong><span class="accent">hexagonal</span></strong> grid.</li>
+        <li>Ensuring <strong><span class="accent">merges</span></strong> occur correctly and only once per move.</li>
+        <li>Smooth <strong><span class="accent">animations</span></strong> with <code>requestAnimationFrame</code>.</li>
+        <li>Handling multi-key input combos for <strong><span class="accent">diagonal</span></strong> movement.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Final Thoughts</h2>
+      <p>
+        <strong><span class="accent">Hexabine</span></strong> offers a refreshing take on a well-loved classic. Its 
+        <strong><span class="accent">hexagonal</span></strong> movement system encourages new strategies, while its clean 
+        canvas <strong><span class="accent">animations</span></strong> keep gameplay satisfying and intuitive. 
+      </p>
+    </section>
+
+    <div style="display: flex; gap: 15px;">
+      <a href="04-Open-Source-Games/Hexabine/hexabine.html" class="btn"><button>Play</button></a>
+      <a href="https://github.com/RyanRizzoGithub/Hexabine" class="btn"><button>Source</button></a>
+    </div>
+  </div>
+</body>
+<script> hljs.highlightAll(); </script>
+</html>

@@ -1,0 +1,29 @@
+P I D O N
+W T A T U
+A F F L E
+E S R Y G
+E E O O C
+H E N S A
+C M A R T
+7
+TACOS
+RAMEN
+PITA
+DONUT
+WAFFLE
+CHEESE
+GYRO
+3 3 4 4 4
+5 3 3 4 4
+5 5 5 5 5
+6 6 7 7 7
+6 6 7 1 1
+6 2 2 1 1
+6 2 2 2 1
+Folded or handheld Mexican favorite usually filled with meat and cheese
+A Japanese noodle dish that became globally popular after WWII
+Simple flatbread sandwich common in Mediterranean cuisines
+Sweet fried or baked treat commonly eaten for breakfast or dessert
+Grid-topping breakfast item often enjoyed with syrup or fruit
+A dairy product made by curdling milk with multiple varieties
+Greek street-food favorite: sliced or shaved meat served in a flatbread

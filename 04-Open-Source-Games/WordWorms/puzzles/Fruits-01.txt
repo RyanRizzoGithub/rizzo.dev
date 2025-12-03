@@ -1,0 +1,29 @@
+O R A E P
+L E N G E
+O M H C A
+N P M C H
+L L U R E
+I N O R Y
+M E L E M
+7
+ORANGE
+PEACH
+LEMON
+PLUM
+CHERRY
+MELON
+LIME
+1 1 1 1 2
+3 3 1 1 2
+3 3 2 2 2
+3 4 4 5 5
+7 4 4 5 5
+7 6 6 5 5
+7 7 6 6 6
+A citrus fruit high in Vitamin C; known to be juicy and tangy
+A soft and fuzzy fruit with a sweet and fragrant flesh, and large core
+A sour, yellow citrus fruit often used in drinks and cooking
+A small and round stone fruit that can be either sweet or tart
+A small fruit red in color with a pit; often used in desserts
+A large and juicy summer time fruit with a sweet and soft flesh
+Green citrus fruit with tart juice used in drinks, cooking, and desserts

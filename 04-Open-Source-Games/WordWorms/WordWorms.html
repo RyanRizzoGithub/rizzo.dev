@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Word Worms</title>
+    <link rel="stylesheet" href="WordWorms.css"/>
+
+<body onload="populateGrid('puzzles/Car-Manufacturers-01.txt')" id="body">
+    <div id="content">
+        <canvas id="canvas"></canvas>
+        <div id="controls">
+            <button onclick=pause() style="position: fixed; left: calc(50vw - 110px); top: 465px;"><i class="fa fa-pause" style="font-size: 14px;"></i></button>
+            <button onclick=resetGame() style="position: fixed; left: calc(50vw - 50px); top: 465px;"><i class="fa fa-repeat" style="font-size: 14px;"></i></button>
+            <button onclick=puzzleSelector() style="position: fixed; left: calc(50vw + 10px); top: 465px;"><i class="fa fa-puzzle-piece" style="font-size: 14px;"></i></button>
+            <button onclick=play() style="position: fixed; left: calc(50vw + 70px); top: 465px;"><i class="fa fa-play" style="font-size: 14px;"></i></button>
+            <p id="category"></p>
+            <button onclick=cycleHints(true) style="position: fixed; right: calc(50vw - 125px); top: 505px; border: none; height: 40px; width: 30px;">></button>
+            <div id="hints"></div>
+            <button onclick=cycleHints(false) style="position: fixed; left: calc(50vw - 125px); top: 505px; border: none; height: 40px; width: 30px;"><</button>
+        </div>
+    </div>
+    <script src="WordWorms.js"></script> 
+</body>

@@ -1,0 +1,29 @@
+S P I P A
+G U D H I
+Y B E M D
+D T R O T
+A N A E H
+L E T L P
+B E W A S
+7
+BEETLE
+SPIDER
+ANT
+APHID
+MOTH
+LADYBUG
+WASP
+2 2 2 4 4
+6 6 2 4 4
+6 6 2 5 4
+6 3 2 5 5
+6 3 3 1 5
+6 1 1 1 7
+1 1 7 7 7
+A hard-shelled insect with protective wing cases
+An eight-legged arachnid that often builds silk webs to trap prey
+A tiny social insect that lives in organized colonies and forages
+A very small sap-sucking pest that clusters on plant stems and leaves
+A usually nocturnal, winged insect often drawn to light, like a butterfly’s cousin
+A small, rounded beetle — often red with black spots — that eats pests
+A narrow-waisted stinging insect, a predator that can be violent around food

@@ -1,0 +1,44 @@
+.article {
+    margin: 100px auto; /* Makes sure the content is always below the topbar */
+    padding: 30px; /* Kepps all content 30 pixesl away from the edge on all sides */
+    border-radius: 20px; /* Gives the corners a rounded effect */
+    background: rgba(0, 0, 0, 0.1); /* Element will be 10% darker than element behind */
+    width: clamp(5px, 75%, 2000px); /* Sets a dynamic width for the intro message */ }
+
+.article section{
+    margin-bottom: 25px;
+}
+
+.article button{
+    width: 15vw;
+    background: var(--accent-color);
+    border-radius: 8px;
+    height: 3vw;
+    font-size: clamp(8px, 1vw, 36px);
+    border: none;
+    color: var(--primary-text-color);
+    font-weight: bold;
+}
+
+.article button:hover {
+    background-color: var(--background-color);
+}
+
+.article h1{
+    color: var(--primary-text-color);
+    font-size: clamp(15px, 2vw, 36px);
+}
+
+.article h2{
+    margin-top: 30px;
+    font-size: clamp(10px, 1.5vw, 26px);
+}
+
+.article p{
+    color: var(--secondary-text-color);
+    font-size: clamp(6px, 1vw, 16px);
+}
+
+.article li{
+    color: var(--secondary-text-color);
+}

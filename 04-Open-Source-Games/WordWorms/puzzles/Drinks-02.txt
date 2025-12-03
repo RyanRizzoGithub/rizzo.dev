@@ -1,0 +1,29 @@
+U O R W I
+Q E E R N
+I B A R E
+L C T A O
+N E M J C
+R E A U O
+C E C I C
+7
+COCOA
+JUICE
+CREAM
+NECTAR
+LIQUOR
+WINE
+BEER
+5 5 5 6 6
+5 7 7 7 6
+5 7 4 4 6
+5 4 4 1 1
+4 4 3 2 1
+3 3 3 2 1
+3 2 2 2 1
+The powder collected from beans and used to make hot chocolate
+Liquid extracted from fruit, often served chilled, with many varieties 
+Thick dairy layer that rises to the top of milk; used in desserts
+Sweet floral liquid collected by bees; also a thick fruit juice
+Distilled alcoholic spirit used in cocktails as well as shots
+A Fermented grape beverage that is often enjoyed with meals
+Popular alcoholic carbonated fermented drink made from barley and hops

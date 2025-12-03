@@ -1,0 +1,84 @@
+#red        { color: #f94144; } /* Used to dye a cell red */
+#red-orange { color: #f3722c; } /* Used to dye a cell red-orange */
+#orange     { color: #f8961e; } /* Used to dye a cell orange */
+#yellow     { color: #f9c74f; } /* Used to dye a cell yellow */
+#green      { color: #90be6d; } /* Used to dye a cell green */
+#green-blue { color: #43aa8b; } /* Used to dye a cell green-blue */
+#blue       { color: #577590; } /* Used to dye a cell blue */
+
+* { box-sizing: border-box; } /* Sets the width handling for the page */
+
+body {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    margin: 0px; /* Remove default margin */
+    align-items: center; /* Center items vertically (for flex, though body is not flex) */
+    justify-content: center; /* Center items horizontally (for flex, though body is not flex) */
+    text-align: center; /* Center text inside elements */
+    position: relative; /* Relative positioning for child elements */
+    background-color: none; } /* No background color */ 
+
+#content { display: block; } /* Ensure content container displays as block */
+
+#canvas {
+    position: fixed; /* Fixed position relative to viewport */
+    top: 0px; /* Top of viewport */
+    left: calc(50vw - 250px); /* Center horizontally minus half width */
+    right: calc(50vw + 250px); /* Center horizontally plus half width */
+    width: 500px; /* Fixed width */
+    height: 500px; /* Fixed height */
+    background: transparent; } /* Transparent background */
+
+#controls {
+    display: inline-block; /* Inline block for horizontal centering */
+    margin-top: 15px; /* Space above controls */
+    margin-bottom: 30px; /* Space below controls */
+    width: 250px; /* Fixed width */
+    position: absolute; /* Absolute positioning within parent */
+    top: 475px; /* Position from top of viewport */
+    left: calc(50vw - 125px); /* Center horizontally minus half width */
+    right: calc(50vw + 125px); /* Center horizontally plus half width */
+    text-align: center; /* Center text inside */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font */
+    font-weight: bolder; } /* Bold font */
+
+#controls p {  margin-bottom: 30px; } /* Set paragraph spacing inside controls */
+
+#controls button {
+    background: transparent; /* Transparent background */
+    border: 1px solid black; /* Thin black border */
+    border-radius: 8px; /* Rounded corners */
+    width: 40px; /* Button width */
+    height: 20px; /* Button height */
+    font-size: 18px; /* Font size */
+    color: rgba(0, 0, 0, 0.8); /* Semi-transparent black text */
+    transition: background 0.2s ease; /* Smooth background change on hover */
+    display: flex; /* Flex layout for content centering */
+    align-items: center; /* Vertically center content */
+    justify-content: center; } /* Horizontally center content */
+
+#controls button:hover { background-color: rgba(0, 0, 0, 0.1); } /* Hover effect for buttons */
+
+#controls i { color: rgba(0, 0, 0, 0.7); } /* Icon color inside controls */
+
+#hints {
+    overflow: scroll; /* Allow scrolling if content overflows */
+    position: fixed; } /* Fixed position relative to viewport */
+
+#hints p {
+    position: fixed; /* Fixed position */
+    display: flex; /* Use flex for centering */
+    justify-content: center; /* Center horizontally */
+    left: calc(50vw - 100px); /* Center horizontally minus half width */
+    top: 480px; } /* Position from top */
+
+#category {
+    position: fixed; /* Fixed position */
+    top: 565px; /* Distance from top */
+    font-size: 10px; /* Small text size */
+    display: flex; /* Flex layout for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 250px; /* Fixed width */
+    text-decoration: double; } /* Double underline text decoration */
+

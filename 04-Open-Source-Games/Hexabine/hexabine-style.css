@@ -1,0 +1,32 @@
+:root { --overlay-color: rgb(0, 0, 0, 0.1); }
+
+#body button:hover { background-color: var(--overlay-color); }
+
+#hexagonCanvas {
+    margin-left: calc(50vw - 250px);
+    height: 500px;
+    width: 500px; }
+
+#body button {
+    width: 125px;
+    background: none;
+    border-radius: 8px;
+    border: 2px solid black;
+    font-family: "Courier New", 'monospace';
+    font-weight: bolder;
+    color: black; }
+
+#restart {
+    position: absolute;
+    left: calc(50vw - 200px);
+    top: 525px; }
+
+#help {
+    position: absolute;
+    left: calc(50vw - 62.5px);
+    top: 525px; }
+
+#toggle {
+    position: absolute;
+    left: calc(50vw + 75px);
+    top: 525px; }

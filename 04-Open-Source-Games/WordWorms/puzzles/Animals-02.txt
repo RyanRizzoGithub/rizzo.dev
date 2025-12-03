@@ -1,0 +1,29 @@
+B R G O D
+E A R E T
+Z O P H E
+E G E R R
+S L F R A
+R E M U N
+O H H Y E
+7
+HORSE
+HYENA
+LEMUR
+FERRET
+GOPHER
+ZEBRA
+DOG
+6 6 7 7 7
+6 6 5 5 4
+6 5 5 5 4
+1 5 4 4 4
+1 3 4 3 2
+1 3 3 3 2
+1 1 2 2 2
+A large domesticated equestrian animal used for riding and work
+Scavenging African carnivore with a distinctive laugh-like call
+A small primate from Madagascar which has big eyes and a long tail
+Slender, domesticated mammal often used for hunting rodents
+A type of burrowing rodent that makes mounds in fields and lawns
+Striped African horse-like animal that lives in savannas
+Domesticated canine companion known for loyalty and playfulness

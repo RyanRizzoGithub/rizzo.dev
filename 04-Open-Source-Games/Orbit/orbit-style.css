@@ -1,0 +1,13 @@
+body {
+			margin: 0;
+			background: url("images/background.jpg");
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			color: white;
+		}
+		canvas {
+			background: #e9d8ba;
+			border: 1px solid black;
+		}

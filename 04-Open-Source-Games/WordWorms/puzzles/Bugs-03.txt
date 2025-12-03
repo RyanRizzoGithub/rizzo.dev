@@ -1,0 +1,29 @@
+L A R V A
+B W O R M
+E D A C H
+D A C I C
+B U G E E
+T I L L S
+K C I A N
+7
+WORM
+LARVA
+CICADA
+BEDBUG
+LEECH
+SNAIL
+TICK
+2 2 2 2 2
+4 1 1 1 1
+4 3 3 3 5
+4 3 3 3 5
+4 4 4 5 5
+7 7 6 5 6
+7 7 6 6 6
+Soft-bodied creature often found in soil, good for compost or fishing
+Immature stage of an insect before it becomes a pupa or adult
+Loud summer insect that emerges in large numbers after years underground
+Small, flat, nocturnal bug that feeds on sleeping humans
+Bloodsucking, segmented worm historically used in medicine
+Slow-moving mollusk with a coiled shell who leaves a slimy trail
+Tiny blood-feeding arachnid that can often transmit disease

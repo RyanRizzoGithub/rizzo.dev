@@ -1,0 +1,29 @@
+A P P E P
+A M L A R
+N G E I K
+P O B W I
+A O A N A
+S G E N N
+S I O N A
+7
+APPLE
+PEAR
+MANGO
+KIWI
+BANANA
+PASSION
+OGEN
+1 1 1 2 2
+3 3 1 2 2
+3 3 1 4 4
+6 3 5 4 4
+6 7 5 5 5
+6 7 7 7 5
+6 6 6 6 5
+A crisp, juicy fruit often red, green, or yellow; keeps doctors away
+A sweet, soft fruit with a narrow top, a stem, and rounded bottom
+A tropical fruit with orange flesh; very sweet and fragrant
+A small, fuzzy fruit with bright green flesh and tiny black seeds
+A long, yellow fruit that is soft, sweet, and full of potassium
+A tangy tropical fruit with wrinkled purple skin and seedy, aromatic pulp
+A small, sweet melon with greenish flesh and a netted yellow rind
