@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rizzo.dev</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="04-Open-Source-Games/WordWorms/WordWormsArticle.css" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body onload="load()">
+    <!----------------------------  TOPBAR RELATED HTML  ------------------------------->
+    <div class="topbar">
+        <div class="collapse" id="collapse" onclick="toggleSidebar()"><i class="fa fa-bars" style="font-size: 24px; border: none; margin-left: 20px;"></i></div>
+        <div class="logo" onclick="replaceContent('home.html'); setScroll(0);"><img src="images/logo-white.png" id="logo"/></div>
+        <div class="utilities">
+            <button style="width: 30px;  margin-left: 1vw" onclick="lightDarkToggle()"><i id="sunmoon" onclick="sunMoonToggle(this)" class="fa fa-sun-o" style="font-size: clamp(19px, 2vw, 23px); border: none;"></i></button>
+            <div id="circle" onclick="colorToggle()" style="width: 30px; margin-left: 1vw; display: flex; align-items: center;"><i class="fa fa-circle" onclick="colorToggle()" style="position: absolute; color:var(--accent-color); font-size: clamp(20px, 2vw, 24px);"></i>
+            <i class="fa fa-circle-o" id="circleoutline" style="font-size: clamp(20px, 2vw, 24px); position:absolute;"></i></div>
+            <a href="https://github.com/RyanRizzoGithub" style="text-decoration: none;"><button style="width: 30px;  margin-left: 1vw"><i class="fa fa-github" id="git" style="font-size: clamp(20px, 2vw, 24px); border: none;"></i></button></a>
+            <button style="width: 30px;  margin-left: 1vw" onclick="replaceContent('home.html'); setScroll(0);"><i id="home" class="fa fa-home" style="font-size: clamp(20px, 2vw, 24px); border: none;"></i></button>
+        </div>
+    </div>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+
+
+    <!----------------------------  SIDEBAR RELATED HTML  ------------------------------->
+    <div class="sidebar-container" id="sidebar-container">
+        <div class="sidebar">
+            <!-- Sidebar introduction message -->
+            <h1>About Me</h1>
+            <p>I'm <span class="accent">Ryan</span>, 
+            Welcome to my digital garden, where I share ideas, projects, and experiments that keep me curious.</p>
+            <hr/>
+            
+            <!-- Group of contact information -->
+            <div class="link-group">
+                <a style="cursor: pointer;" onclick="replaceContent('01-Personal-Information/personal-information-index.html', 'about-me');" class="head-link">Personal Information</a>
+                <ul class="sub-links">
+                    <li style="cursor: pointer;"><a onclick="replaceContent('01-Personal-Information/personal-information-index.html', 'about-me');"><i class="fa fa-child" style="width:10px;"></i> About Me</a></li>
+                    <li style="cursor: pointer;"><a onclick="replaceContent('01-Personal-Information/personal-information-index.html', 'contact');"><i class="fa fa-500px" style="width:10px;"></i> Contact Information</a></li>
+                    <li style="cursor: pointer;"><a onclick="replaceContent('01-Personal-Information/personal-information-index.html', 'skills');"><i class="fa fa-bar-chart" style="width:10px;"></i> Skills</a></li>
+                    <li style="cursor: pointer;"><a onclick="replaceContent('01-Personal-Information/personal-information-index.html', 'education');"><i class="fa fa-graduation-cap" style="width:10px;"></i> Education</a></li>
+                    <li style="cursor: pointer;"><a onclick="replaceContent('01-Personal-Information/personal-information-index.html', 'resume');"><i class="fa fa-paperclip" style="width:10px;"></i> Resume</a></li>
+                    <li style="cursor: pointer;"><a onclick="replaceContent('01-Personal-Information/personal-information-index.html', 'about-me');" style="text-decoration: underline; color: var(--accent-color); cursor: pointer;"> <i class="fa fa-arrow-right" style="width:10px;"></i>See All</li>
+                </ul>
+            </div>
+            <hr/>
+
+            <!-- Group of Social Media links -->
+            <div class="link-group">
+                <a style="cursor: pointer;" onclick="replaceContent('02-Stay-Connected/stay-connected-index.html'); setScroll(0);" class="head-link">Stay Connected</a>
+                <ul class="sub-links">
+                    <li><a href="mailto:rbrizzo99.career@gmail.com"><i class="fa fa-envelope" style="width:10px;"></i> Email</a></li>
+                    <li><a href="https://github.com/RyanRizzoGithub"><i class="fa fa-github"  style="width:10px;"></i> Github</a></li>
+                    <li><a href="https://www.linkedin.com/in/ryan-rizzo-/"><i class="fa fa-linkedin" style="width:10px;"></i> LinkedIn</a></li>
+                    <li><a href="https://www.youtube.com/@Ryan_Rizzo"><i class="fa fa-youtube" style="width:10px;"></i> YouTube</a></li>
+                    <li><a href="https://soundcloud.com/rizzosc"><i class="fa fa-soundcloud" style="width:10px;"></i> Soundcloud</a></li>
+                    <li><a onclick="replaceContent('02-Stay-Connected/stay-connected-index.html')" style="text-decoration: underline; color: var(--accent-color); cursor: pointer;"> <i class="fa fa-arrow-right" style="width:10px;"></i>See All</li>
+                </ul>
+            </div>
+            <hr/>
+            
+            <!-- Group of programming projects -->
+            <div class="link-group">
+                <a style="cursor: pointer;" onclick="replaceContent('03-Programming-Projects/programming-projects-index.html'); setScroll(0);" class="head-link"> Programming Projects</a>
+                <ul class="sub-links">
+                    <li style="cursor: pointer;"><a onclick="replaceContent('03-Programming-Projects/Spotify-Analysis/spotify-analysis-article.html'); setScroll(0);"><i class="fa fa-spotify" style="width:10px;"></i> Spotify Analysis</a></li>
+                    <li style="cursor: pointer;"><a onclick="replaceContent('03-Programming-Projects/MyMetronome/my-metronome-article.html'); setScroll(0);"><i class="fa fa-clock-o" style="width:10px;"></i> MyMetronome</a></li>
+                    <li style="cursor: pointer;"><a onclick="replaceContent('03-Programming-Projects/Tree-Generator/tree-generator-article.html'); setScroll(0);"><i class="fa fa-tree" style="width:10px;"></i> Generative Trees</a></li>
+                    <li style="cursor: pointer;"><a onclick="replaceContent('03-Programming-Projects/Procedural-Artwork/procedural-artwork-article.html'); setScroll(0);"><i class="fa fa-cogs" style="width:10px;"></i> Algorithmic Expressions</a></li>
+                    <li style="cursor: pointer;"><a onclick="replaceContent('03-Programming-Projects/programming-projects-index.html'); setScroll(0);" style="text-decoration: underline; color: var(--accent-color); cursor: pointer;"> <i class="fa fa-arrow-right" style="width:10px;"></i>See All</li>
+                </ul>
+            </div>
+            <hr/>
+
+             <!-- Group of programming projects -->
+            <div class="link-group">
+                <a style="cursor: pointer;" onclick="replaceContent('04-Open-Source-Games/open-source-games-index.html'); setScroll(0);" class="head-link"> Open Source Games</a>
+                <ul class="sub-links">
+                    <li style="cursor: pointer;"><a onclick="replaceContent('04-Open-Source-Games/WordWorms/WordWormsArticle.html'); setScroll(0);"><span class="accent" style="margin-right: 2px;">W</span> Word Worms</a></li>
+                    <li style="cursor: pointer;"><a onclick="replaceContent('04-Open-Source-Games/Hexabine/hexabine-article.html'); setScroll(0);"><span class="accent" style="margin-right: 2px;">⬡</span> Hexabine</a></li>
+                    <li style="cursor: pointer;"><a onclick="replaceContent('04-Open-Source-Games/Orbit/orbit-article.html'); setScroll(0);"><i class="fa fa-repeat" style="width:10px;"></i>Orbit</a></li>
+                    <li style="cursor: pointer;"><a onclick="replaceContent('04-Open-Source-Games/open-source-games-index.html'); setScroll(0);" style="text-decoration: underline; color: var(--accent-color); cursor: pointer;"> <i class="fa fa-arrow-right" style="width:10px;"></i>See All</li>
+                </ul>
+            </div>
+            <hr/>
+
+            <div class="link-group">
+                <a style="cursor: pointer;" onclick="replaceContent('05-Learn-About-Me/learn-about-me-index.html'); setScroll(0);" class="head-link"> Learn About Me</a>
+                <ul class="sub-links">
+                    <li><a onclick="replaceContent('05-Learn-About-Me/learn-about-me-index.html'); setScroll(0);"><i class="fa fa-pencil" style="width:10px;"></i> Blog</a></li>
+                    <li><a onclick="replaceContent('05-Learn-About-Me/learn-about-me-index.html'); setScroll(0);"><i class="fa fa-sticky-note-o" style="width:10px;"></i> Notes</a></li>
+                    <li><a onclick="replaceContent('05-Learn-About-Me/learn-about-me-index.html'); setScroll(0);"><i class="fa fa-list" style="width:10px;"></i> Lists</a></li>
+                    <li><a onclick="replaceContent('05-Learn-About-Me/learn-about-me-index.html'); setScroll(0);"><span class="accent" style="margin-right: 2px;">{ }</span> Collections</a></li>
+                    <li><a onclick="replaceContent('05-Learn-About-Me/learn-about-me-index.html')" style="text-decoration: underline; color: var(--accent-color); cursor: pointer;"> <i class="fa fa-arrow-right" style="width:10px;"></i>See All</li>
+                </ul>
+            </div>
+            
+            <!-- Group of fun and interesting things -->
+            <div style="cursor: pointer;" class="link-group">
+                <a onclick="replaceContent('06-Creative-Projects/creative-projects-index.html'); setScroll(0);" class="head-link"> Creative Projects</a>
+                <ul class="sub-links">
+                    <li><a onclick="replaceContent('06-Creative-Projects/creative-projects-index.html'); setScroll(0);"><i class="fa fa-music" style="width:10px;"></i> Music</a></li>
+                    <li><a onclick="replaceContent('06-Creative-Projects/creative-projects-index.html'); setScroll(0);"><i class="fa fa-paint-brush" style="width:10px;"></i> Digital Artwork</a></li>
+                    <li><a onclick="replaceContent('06-Creative-Projects/creative-projects-index.html'); setScroll(0);"><i class="fa fa-paint-brush" style="width:10px"></i> Physical Artwork</a></li>
+                    <li><a onclick="replaceContent('06-Creative-Projects/creative-projects-index.html'); setScroll(0);"><i class="fa fa-paint-brush" style="width:10px"></i> Tank Scaping</a></li>
+                    <li><a onclick="replaceContent('06-Creative-Projects/creative-projects-index.html')" style="text-decoration: underline; color: var(--accent-color); cursor: pointer;"> <i class="fa fa-arrow-right" style="width:10px;"></i>See All</a></li>
+                </ul>
+            </div>
+            <hr/>
+        </div>
+    </div>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+
+
+    <!----------------------------  CONTENT RELATED HTML  ------------------------------->
+    <div class="content" id="content">
+    </div>
+     <div class="content-overlay" id="content-overlay"></div>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <script src="script.js"></script> 
+</body>
+</html>
