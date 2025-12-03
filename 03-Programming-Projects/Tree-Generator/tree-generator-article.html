@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hexabine</title>
+  <link rel="stylesheet" href="tree-generator-article.css">
+</head>
+<body>
+<div class="article">
+    
+    <h3 style="color: var(--tertiary-text-color); margin-top: -10px; margin-bottom: -5px;">2024</h3>
+    <h1 class="">Generative Trees: <span style="font-size: smaller; font-weight: lighter;">An study of procedural nature with P5.js</span></h1>
+
+    <div style="display: flex; gap: 15px;">
+        <a href="https://editor.p5js.org/RyanRizzo/full/95HAfUXcB"><button>Demo</button></a>
+        <a href="https://github.com/RyanRizzoGithub/Generative-Artwork/tree/57bb7504b4d7562f7d2d7e420dac86e7bcdd794b/Tree_P5JS"><button>Source</button></a>
+    </div>
+
+    <img src="/03-Programming-Projects/Tree-Generator/images/tree-transparent.png" width="75%" style="margin-left: 10%;">
+
+    <section class="">
+        <h2 class="">Introduction</h2>
+        <p><strong><span class="accent">Tree Generator</span></strong> is a procedural art program I developed in JavaScript using the <strong><span class="accent">P5.js</span></strong> graphics library. At first glance, it simply draws trees with trunks, branches, leaves, and grass. But beneath the surface lies a recursive system for rendering natural-looking structures, complete with textures, randomized patterns, and user-controlled parameters.</p>
+        <p>This project explores how recursion, geometry, and randomness can be combined to mimic the <strong><span class="accent">complexity of nature</span></strong> — giving each tree a unique, hand-painted feel while remaining algorithmically generated.</p>
+    </section>
+
+    <section class="">
+        <h2 class="">How It Works</h2>
+        <p>When the program loads, it sets up a canvas and preloads textures for bark, leaves, and grass. A <strong><span class="accent">control panel</span></strong> appears beneath the canvas, allowing users to adjust parameters like canopy size, branch density, leaf count, and trunk width. Each time the <strong><span class="accent">"Generate"</span></strong> button is clicked, a new tree is created from scratch with a random seed (which can be locked for reproducibility).</p>
+        <p>At the core is the <strong><span class="accent">TreeGenerator</span></strong> class, which builds the tree in three recursive stages:</p>
+        <ul class="">
+            <li><strong><span class="accent">Stump</span></strong> → The trunk is drawn in segments, sometimes leaning or swelling, to create a natural base.</li>
+            <li><strong><span class="accent">Boughs</span></strong> → Each trunk segment can spawn branching boughs. Recursive subdivision controls how many levels deep the branches grow.</li>
+            <li><strong><span class="accent">Leaves</span></strong> → At the ends of branches, textured leaves are added. Their position and rotation are randomized to avoid repetition.</li>
+        </ul>
+        <p>Surrounding the tree, the <code>grass()</code> function recursively fills the bottom of the canvas with textured blades, grounding the scene in a natural environment.</p>
+    </section>
+
+    <section class="">
+        <h2 class="">Key Challenges</h2>
+
+        <h3 class="">Challenge 1: Recursive Tree Growth</h3>
+        <p>The biggest challenge was ensuring the recursion had <strong><span class="accent">proper base cases</span></strong>. Without strict depth limits, the tree would recurse infinitely and crash. By carefully capping recursion at each stage (stump, boughs, leaves), I ensured realistic tree shapes without runaway loops.</p>
+
+        <h3 class="">Challenge 2: Texture Mapping</h3>
+        <p>Using <strong><span class="accent">textures for bark and leaves</span></strong> was trickier than expected. Each shape (trunk, branch, or leaf) is rendered as a quad or ellipse with mapped texture coordinates. This gives the tree depth and realism compared to flat colors, but required experimenting with <code>beginShape()</code>, <code>vertex()</code>, and <code>texture()</code> in P5.js’s WEBGL mode.</p>
+
+        <h3 class="">Challenge 3: Natural Randomness</h3>
+        <p><strong><span class="accent">Randomness drives the uniqueness</span></strong> of each tree, but uncontrolled randomness looks chaotic. To keep trees believable, I constrained random values (like branch angles or leaf positions) within natural ranges, and used sliders so users could tune how extreme the variation should be.</p>
+    </section>
+
+    <section class="">
+        <h2 class="">Interactivity</h2>
+        <p>One of my favorite features is the <strong><span class="accent">control panel</span></strong>, which allows real-time experimentation. By sliding parameters like “Twig Quantity,” “Leaf Size,” or “Branch Factor,” users can shape trees into anything from dense oaks to sparse pines. The “Seed Lock” button ensures reproducibility, letting artists save specific tree designs for later use.</p>
+    </section>
+
+    <section class="">
+        <h2 class="">What Makes It Unique</h2>
+        <p>Unlike static illustrations, this generator produces <strong><span class="accent">infinite variations</span></strong> of trees. Every click creates something slightly new — a different curvature in the trunk, a shift in the branches, or a scatter of leaves. It’s a tool not just for coding practice, but for exploring generative art and the <strong><span class="accent">beauty of controlled randomness</span></strong>.</p>
+    </section>
+
+    <section class="">
+        <h2 class="">Conclusion</h2>
+        <p>The <strong><span class="accent">Tree Generator</span></strong> is more than a drawing tool; it’s an experiment in simulating nature with code. By combining recursion, geometry, and texture mapping, I was able to create an interactive system that produces endlessly unique and organic results.</p>
+        <p>Whether used as a generative art piece, a learning exercise in recursion, or a base for a game environment, this project shows how even simple algorithms can grow into something that <strong><span class="accent">feels alive</span></strong>.</p>
+    </section>
+
+    <div style="display: flex; gap: 15px;">
+        <a href="https://editor.p5js.org/RyanRizzo/full/95HAfUXcB"><button>Demo</button></a>
+        <a href="https://github.com/RyanRizzoGithub/Generative-Artwork/tree/57bb7504b4d7562f7d2d7e420dac86e7bcdd794b/Tree_P5JS"><button>Source</button></a>
+    </div>
+</div>
+</body>
