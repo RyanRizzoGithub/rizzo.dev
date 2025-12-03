@@ -1,0 +1,392 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* GLOBAL RELATED STYLING */
+* { box-sizing: border-box;} /* Handles how height and width are calculated */
+
+:root { --primary-text-color: #fbfbfb; /* Text color used for most headers */
+        --secondary-text-color: #cccccc; /* Text color used for most text */
+        --tertiary-text-color: #a6a5a5; /* Text color used for most sub details */
+        --accent-color: #3c92cb; /* Color used sparingly to give page color */
+        --background-color: #28292f; /* Color of the pages background */
+        --overlay-color: rgba(0, 0, 0, 0.2); /* Used to darken sections */
+        font-size: 1vw; } /* Sets a default font size for used with rem */
+
+body {  width: 100%; /* Makes the content cover the full width of the page */
+        height: 100%; /* Makes the content cover the full height of the page */
+        color: var(--primary-text-color); /* Sets the default font color */
+        background: var(--background-color); /* Sets the background color */
+        font-family: "Inter", sans-serif; /* Sets the default font family */
+        margin-top: 0px; /* Eliminates any gap from the top of the screen */
+        margin-left: 0px; /* Eliminates any gap from the left of the screen */
+        overflow-x: hidden;
+        font-feature-settings: 'liga' 1, 'calt' 1; } /* Sets the font features */
+
+.accent { color: var(--accent-color); outline: var(--primary-text-color)} /* Adds color to spans */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* TOPBAR RELATED STYLING */
+.topbar {
+    width: 100%; /* Topbar is always full width of screen */
+    height: 50px; /* Topbar is always 50 pixels tall */
+    position: fixed; /* The topbar will always remain in the same location */
+    display: flex; /* Items inside the topbar use a flex display */
+    align-items: center; /* Centers the items on the y-axis of the div */
+    justify-content: space-between; /* gives items ian equal amount of space between */
+    padding: 0 20px; /* No padding on the left, 20 pixels of padding on the right */
+    background: var(--overlay-color); /* Element will be 10% darker than element behind */
+    backdrop-filter: blur(10px); /* Creates blur for items that pass behind the topbar */
+    z-index: 1;} /* Required for the blur effect */ 
+
+.logo {
+    margin-top: 5px; /* Moves the logo 5 pixels down from the top */
+    position: absolute; /* Determines the logo will not shift */
+    left: calc(50% - clamp(20px, 10vw, 80px));} /* Location of the left side of the image scales */
+
+.logo img { width: clamp(40px, 20vw, 160px); cursor: pointer;} /* Makes the "Rizzo.dev" logo scale */
+.topbar .collapse { align-items: flex-start; cursor: pointer; } /* Sets the position of the sidebar collapse button */
+.topbar .collapse:hover {color: var(--accent-color); } /* Changes the color when hovering the hamburger */
+
+.topbar .utilities button{
+    background: transparent; /* Removes the button graphic */
+    border: none; /* Removes the buttons border */
+    color: var(--primary-text-color); /* Set the font color */
+    font-size: clamp(8px, 2vw + 1rem, 16px); /* Creates a dynamic size for the buttons */
+    display: flex; /* Allows the divs to resize */
+    justify-content: center; /* Centers about the x-axis */
+    align-items: center; /* Centers about the y-axis */
+    gap: 4px; /* Adds space between each button */
+    cursor: pointer; /* Changes the cursor when hovering so users knows they can click. */
+    width: 2vw; /* Gives the buttons a dynamic size */
+    padding-left: 10px; /* Evens out the space on the left side */
+    padding-right: 20px; } /* Evens out the space on the right side */
+
+.topbar .utilities { display: flex; align-items: center; } /* Sets the location of the utlitie buttons */
+.topbar .color-selector { justify-content: center; align-items: center; } /* Centers the color selector button */
+#sunmoon:hover { color: var(--accent-color); } /* Recolors the light-dark switch when hovering */
+#git:hover { color: var(--accent-color); } /* Recolors the  github link when hovering */
+#home:hover { color: var(--accent-color); } /* Recolors the home button when hovering */
+#circle:hover {cursor: pointer;} /* Changes the cursor when hovering the color switch */
+#circleoutline:hover { color: var(--accent-color); } /* Recolors the color switch when hovering */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* SIDEBAR RELATED STYLING */
+.sidebar-container {
+    margin-left: -250px; /* Puts the sidebar off screen on load (for animation) */
+    width: 250px; /* Sets a static width for the sidebar */
+    height: 100%; /* Sidebar will always span the full height of the screen */
+    position: fixed; /* The sidebar will never shift positions */
+    top: 0; /* Removes any margin from the top of the sidebar */
+    background: var(--overlay-color); /* Element will be 10% darker than element behind */
+    overflow-y: auto; /* Extra content below can be scrolled to */
+    overflow-x: hidden; /* Extra content to the side will dissapear */
+    transition: margin-left 500ms; } /* Gives the sidebar an animation when opening */
+
+.sidebar { padding: 10vh 2vw 3vh 3vw; } /* Sets the padding for all sidebar elements */
+
+.sidebar h1 {
+    font-size: 16px; /* Sets a static font size for the section headers */
+    margin-bottom: 15px; /* Gives each header space underneath */
+    color: var(--primary-text-color); } /* Each header will be the primary text color */
+
+.sidebar p {
+    font-size: 14px; /* Sets a static font size for the link descriptions */
+    color: var(--secondary-text-color); /* Each link description will be secondary text color */
+    margin-bottom: 15px; /* Gives each description space underneath */
+    width: 80%; } /* Keeps the description from occupying full width of the sidebar */
+
+.sidebar hr {
+    border: none; /* Removes the elements border */
+    border-bottom: 1px solid rgba(204, 204, 204, 0.1); /* Adds a border to only the bottom */
+    margin: 15px 0; /* Makes sure the lines spacing */ }
+
+.link-group { margin-bottom: 15px; } /* Gives each group spacing below */
+
+.head-link {
+    font-weight: bold; /* Allows the section headers to have bold font */
+    font-size: 16px; /* Sets a static font size */
+    text-decoration: none; /* Removes the underline from the link */
+    display: block; /* Stacks elements on top of each other */
+    margin-bottom: 10px; /* Gives the header space underneath */
+    color: var(--primary-text-color); } /* Uses the second brightest font color */
+
+.sub-links { list-style: none; padding: 0; } /* Removes the default markers */
+.sub-links li { margin-bottom: 5px; } /* Gives the list elements further identation */
+.sub-links li:hover { background-color: var(--background-color); } /* Hovering changes the color */
+
+.sub-links a {
+    text-decoration: none; /* Removes the underline from the link */
+    color: var(--secondary-text-color); /* Sets the color of the font */
+    font-size: 14px;/* Sets the size of the font */ }
+
+.sub-links i {
+    color: var(--accent-color); /* Sets the color of the font */
+    margin-right: 8px; } /* Gives each link an indentation */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* CONTENT RELATED STYLING */
+.content-overlay {
+    position: absolute;
+    top: 0;
+    left: 100vw;
+    width: 100%;
+    height: 100%;
+    background-color: #28292f;
+    transition: 500ms;
+}
+
+.content {
+    min-width: 500px;
+    margin-left: 0px; /* Removes any gap from the left side of the main content */
+    position: relative; /* This division will be placed relative to sibling division */
+    height: 100%; /* The main content will always stretch the entire height of the screen */
+    overflow-y: auto; /* Content which goes below the division will be scrollable */
+    overflow-x: scroll;
+    width: 100vw; /* Content will always stretch the entire width of the screen */
+    transition: 500ms; } /* Allows for smooth animated resizing of the division */ 
+    
+
+#graph { height: 80px; width: 90%; } /* Sets a static height and dynamic width for the graphic */ 
+
+.introduction {
+    margin: 100px auto; /* Makes sure the content is always below the topbar */
+    padding: 30px; /* Kepps all content 30 pixesl away from the edge on all sides */
+    border-radius: 20px; /* Gives the corners a rounded effect */
+    background: rgba(0, 0, 0, 0.1); /* Element will be 10% darker than element behind */
+    width: clamp(5px, 75%, 2000px); } /* Sets a dynamic width for the intro message */ 
+
+.introduction h1 {
+    padding: 10px 0; /* Moves the header below the top of the division */
+    color: var(--primary-text-color); /* Sets the color of the font */
+    font-size: 4rem; } /* Sets a dynamic font size for the header */
+
+.introduction p {
+    padding-top: 10px; /* Moves the descrition further below the header */
+    line-height: 2; /* Adds more space between each line of text */
+    color: var(--secondary-text-color); /* Sets the color of the font */
+    font-size: clamp(12px, 2rem, 18px); } /* Sets a dynamic size for the font */
+
+
+.introduction-buttons {
+    margin-top: 20px; /* Gives the buttons head room below the paragraph */
+    display: flex; /* Allows child elemnts to reposition rlative to one another */
+    flex: 1;
+    gap: 10px;
+    align-items: center; } /* Keeps the logo and text inside the button aligned */
+   
+
+.introduction-buttons button {
+    background: var(--overlay-color); /* Changes to a transparent background */
+    border: none; /* Removes the default border from the button */
+    display: flex; /* Allows child elemnts to reposition rlative to one another */
+    font-size: clamp(10px, 10vw, 16px);
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    color: var(--secondary-text-color); /* Sets the color of the font */
+    border-radius: 5px; /* Gives the buttons a rounded edge */
+    padding-right: 15px;
+    padding-left: 5px; 
+    width: clamp(15px, 20vw, 150px);
+    height: 30px;
+    transition: width 500ms; }
+
+.introduction-buttons button:hover {  
+    color: var(--accent-color); /* Sets the color of the font */
+    background-color: var(--background-color); /* Sets the color of the background */ }
+
+.introduction-buttons img {
+    width: clamp(2px, 3vw, 30px);
+    height: clamp(2px, 3vw, 30px);
+    margin: 2px;
+    filter: hue-rotate(0deg) brightness(85%); }
+
+.section-header { 
+    display: flex;
+    margin-left: 150px;
+    gap: 10px;
+    font-size: clamp(10px, 1vw, 24px);
+    margin-top: 100px;
+}
+
+.section-header h1 { font-size: 24px;}
+
+.see-all-button {
+    background: transparent;
+    border: none;
+    width: 80%;
+    height: 60px;
+    color: var(--secondary-text-color); /* Sets the color of the font */
+    text-align: left;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px; 
+    font-size: clamp(10px, 1vw, 24px); }
+
+.see-all-button:hover { color: var(--accent-color); text-decoration: underline; }
+
+.projects,
+.blog,
+.notes,
+.project-bubbles,
+.blog .blog-body,
+.notes .notes-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   /* centers the children horizontally */
+    gap: 20px;                 /* nice spacing between bubbles */
+    margin: 0 auto;            /* centers the container itself */
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.project-bubbles .bubble{
+    background: var(--overlay-color);
+    border-radius: 10px;
+    line-height: 20px;
+    padding: 10px;                        
+    flex-basis: 100%;
+}
+
+.project-bubbles {
+    width: 100%;          /* make container span full row */
+    display: block;       /* stop acting like a flex row */
+    margin: 0 auto;       /* keep it centered like blog/notes */
+    padding: 0 5vw;       /* same side padding */
+}
+
+.project-bubbles .bubble {
+    flex-basis: 100%;     /* keep full width */
+    margin-bottom: 20px;  /* spacing like blog buttons */
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 175px;
+}
+
+.project-bubbles .bubble .project-title:hover { text-decoration: underline; } /* Underlines when hovering */
+
+.project-bubbles .bubble .bubble-button {
+    display: flex; /* Allows child elemnts to reposition rlative to one another */
+    background: transparent; 
+    gap: 10px;
+    }
+
+.project-bubbles .bb {
+    display: flex; /* Allows child elemnts to reposition rlative to one another */
+    align-items: center;
+    border: none;
+    justify-content: center;
+    background: var(--background-color);
+    border-radius: 10px;  /* Gives the buttons a rounded edge */
+    width: clamp(65px, 30%, 50px);
+    height: 30px;
+    color: var(--secondary-text-color); /* Sets the color of the font */
+    text-align: center;
+    font-size: 14px; }
+
+.project-bubbles .bb:hover { 
+    color: var(--accent-color); /* Sets the color of the font */
+    cursor: pointer;
+    background-color: var(--background-color); }/* Changes color when hovering */
+
+
+.blog button, .notes button {
+    background: transparent;
+    border: 1px solid rgb(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 150px;
+    color: var(--secondary-text-color);
+    text-align: left;
+    cursor: pointer; 
+    flex-basis: 100%; }
+
+.blog button:hover, .notes button:hover { background: var(--overlay-color); }
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* CONTACT PAGE RELATED STYLING */
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;  /* Gives the box a rounded edge */
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background-color: var(--overlay-color);
+    color: var(--primary-text-color); }
+
+input[type=submit] {
+    background-color: var(--accent-color);
+    color: var(--primary-text-color);
+    padding: 4px 20px;
+    border-radius: 4px;  /* Gives the box a rounded edge */
+    cursor: pointer; 
+    font-weight: bold;
+    height: 25px;}
+
+input[type=submit]:hover { background-color: var(--accent-color); }
+
+.contact-form {
+    border-radius: 10px;  /* Gives the box a rounded edge */
+    background-color: var(--overlay-color);
+    padding: 20px;
+    width: 70%;
+    margin-left: 15%; }
+
+.contact-form label {
+    font-weight: bold;
+    margin-left: 4px;
+    color: var(--secondary-text-color); }
+
+.contact-bubble {
+    margin: 5px auto;
+    padding: 15px;
+    border-radius: 10px;  /* Gives the box a rounded edge */
+    background: var(--overlay-color);
+    width: 70%; 
+    display: flex; /* Allows child elemnts to reposition rlative to one another */
+    margin-bottom: 20px; }
+
+.contact-bubble-icon {
+    display: flex; /* Allows child elemnts to reposition rlative to one another */
+    justify-content: center;
+    align-self: center; 
+    margin-left: 30px; }
+
+.contact-bubble-icon:hover { cursor: pointer; }
+.contact-bubble-content { display: block; margin-left: 40px; justify-content: center; }
+.contact-bubble-title { font-size: 18px; margin-bottom: 5px; }
+.contact-bubble-title:hover { cursor: pointer; }
+.contact-bubble-link { text-decoration: none; color: var(--accent-color); font-size: 14px; }
+.contact-bubble-link:hover { text-decoration: underline; }
+.contact-bubble-desc { margin-top: 5px; color: var(--secondary-text-color); font-size: 14px; }
+.contact-spacer { height: 40px; }
+
+
+
+
+
+
+
+

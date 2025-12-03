@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en" style="--accent-color: #9871ed; --background-color: #28292f;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rizzo.dev</title>
+  
+  
+  
+  
+<link rel="stylesheet" href="./Rizzo.dev_files/style.css"><link rel="preconnect" href="https://rsms.me/"><link rel="stylesheet" href="./Rizzo.dev_files/inter.css"><link rel="stylesheet" href="./Rizzo.dev_files/font-awesome.min.css"></head>
+<body cz-shortcut-listen="true">
+  <div class="topbar">
+    <div class="home">
+    <div class="logo"><img src="./Rizzo.dev_files/logo-white.png" id="logo"></div>
+    <div class="home-button"><i class="fa fa-home" style="font-size: 24px; border: none;"></i></div>
+    </div>
+
+    <div class="menu">
+        <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none;">
+            <button class="topbar-button" style="border: var(--border); border-radius: 8px">
+            <img src="./Rizzo.dev_files/brain.png" alt="About Me" id="brain">About </button>
+        </a>
+        <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none;">
+            <button class="topbar-button" style="border: var(--border); border-radius: 8px">
+            <img src="./Rizzo.dev_files/hammer.png" alt="Projects" id="hammer">Projects </button>
+        </a>
+        <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none;">
+            <button class="topbar-button" style="border: var(--border); border-radius: 8px">
+            <img src="./Rizzo.dev_files/pencil.png" alt="Blog" id="pencil">Blog </button>
+        </a>
+        <a href="http://127.0.0.1:5500/index.html#" style="text-decoration: none;">
+            <button class="topbar-button" style="border: var(--border); border-radius: 8px">
+                <img src="./Rizzo.dev_files/notepad.png" alt="Notes" id="notepad">Notes </button>
+        </a>
+        <a onclick="replaceContent(&#39;contact.html&#39;)" style="text-decoration: none;">
+            <button class="topbar-button" style="border: var(--border); border-radius: 8px">
+            <img src="./Rizzo.dev_files/envelope.png" alt="Contact">Contact </button>
+        </a>
+        
+        <button style="width: 30px;  margin-left: 40px" onclick="lightDarkToggle()"><i id="sunMoon" onclick="sunMoonToggle(this)" class="fa fa-moon-o" style="font-size: 24px; border: none;"></i></button>
+        <div class="color-selector" style="width: 30px; margin-left: 15px;"><i class="fa fa-circle-o" style="font-size: 24px; border: none;"></i>
+            <i class="fa fa-circle" style="position:fixed; color:var(--accent-color); font-size: 18px; margin-left: -18px; margin-top: 2.75px;"></i>
+            <div class="dropdown-content">
+                <br>
+                <br>
+                <button onclick="red()"><i class="fa fa-circle" style="color: #ed6363;"></i></button>
+                <button onclick="orange()"><i class="fa fa-circle" style="color: #e89656;"></i></button>
+                <button onclick="yellow()"><i class="fa fa-circle" style="color: #caad39;"></i></button>
+                <button onclick="green()"><i class="fa fa-circle" style="color: #2eba4a;"></i></button>
+                <button onclick="blue()"><i class="fa fa-circle" style="color: #3c92cb;"></i></button>
+                <button onclick="purple()"><i class="fa fa-circle" style="color: #9871ed;"></i></button>
+               
+            </div>
+        </div>
+        <a href="https://github.com/RyanRizzoGithub" style="text-decoration: none;"><button style="width: 30px;  margin-left: 15px"><i class="fa fa-github" style="font-size: 24px; border: none;"></i></button></a>
+    </div>
+  </div>
+
+  <div class="sidebar-container">
+    <div class="sidebar">
+      <h1>About Me</h1>
+      <p>I'm <span class="accent">Ryan</span>, 
+        software engineer and open-source creator. 
+        This is my digital garden. Make sure you fix this 🌱</p>
+      <hr>
+      
+      <div class="link-group">
+        <a onclick="replaceContent(&#39;contact.html&#39;)" class="head-link">Stay Connected</a>
+        <ul class="sub-links">
+          <li><a href="mailto:rbrizzo99.career@gmail.com"><i class="fa fa-envelope" style="width:10px;"></i> Email</a></li>
+          <li><a href="https://github.com/RyanRizzoGithub"><i class="fa fa-github" style="width:10px;"></i> Github</a></li>
+          <li><a href="https://www.linkedin.com/in/ryan-rizzo-/"><i class="fa fa-linkedin" style="width:10px;"></i> LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <hr>
+      <div class="link-group">
+        <a href="http://127.0.0.1:5500/index.html#" class="head-link">Personal Information</a>
+        <ul class="sub-links">
+          <li><a href="http://127.0.0.1:5500/index.html#"><i class="fa fa-child" style="width:10px;"></i> About Me</a></li>
+          <li><a href="http://127.0.0.1:5500/contact.html"><i class="fa fa-500px" style="width:10px;"></i> Contact Information</a></li>
+          <li><a href="http://127.0.0.1:5500/index.html#"><i class="fa fa-bar-chart" style="width:10px;"></i> Skills</a></li>
+          <li><a href="http://127.0.0.1:5500/index.html#"><i class="fa fa-clock-o" style="width:10px;"></i> Experience</a></li>
+          <li><a href="http://127.0.0.1:5500/index.html#"><i class="fa fa-graduation-cap" style="width:10px;"></i> Education</a></li>
+          <li><a href="http://127.0.0.1:5500/index.html#"><i class="fa fa-paperclip" style="width:10px;"></i> Resume</a></li>
+        </ul>
+      </div>
+
+      <hr>
+      <div class="link-group">
+        <a href="http://127.0.0.1:5500/index.html#" class="head-link"> Programming Projects</a>
+        <ul class="sub-links">
+          <li><a href="http://127.0.0.1:5500/index.html#"><i class="ffa fa-cogs" style="width:10px;"></i> Generative Visual Media</a></li>
+          <li><a href="http://127.0.0.1:5500/index.html#"><i class="fa fa-sort-amount-asc" style="width:10px;"></i> Skittle Sorter</a></li>
+          <li><a href="http://127.0.0.1:5500/index.html#"><span class="accent" style="margin-right: 2px;">W</span>&nbsp; Wordle Reimagined</a></li>
+          <li><a href="http://127.0.0.1:5500/index.html#"><i class="fa fa-database" style="width:10px;"></i> Hotel Database</a></li>
+        </ul>
+      </div>
+
+      <hr>
+      <div class="link-group">
+        <a href="http://127.0.0.1:5500/index.html#" class="head-link"> Fun Things</a>
+        <ul class="sub-links">
+          <li><a href="http://127.0.0.1:5500/index.html#"><i class="fa fa-music" style="width:10px;"></i> Music</a></li>
+          <li><a href="http://127.0.0.1:5500/index.html#"><i class="fa fa-paint-brush" style="width:10px;"></i> Artwork</a></li>
+          <li><a href="http://127.0.0.1:5500/index.html#"><i class="fa fa-list" style="width:10px;"></i> My Lists</a></li>
+          <li><a href="http://127.0.0.1:5500/index.html#"><span class="accent" style="margin-right: 2px;">{ }</span> Collections</a></li>
+        </ul>
+      </div>
+      <hr>
+    </div>
+  </div>
+
+  <div class="textbox" id="content">
+    <div class="introduction">
+        <canvas id="graph" width="600" height="80" style="margin-top: 10px;"></canvas>
+        <h1>Hey, I'm Ryan!</h1>
+        <p>Welcome to my website. This is a place I've created 
+        where I can share my creations and process with the world!
+        <br><br>
+        I'm a software engineer, open-source creator,
+        and musician. I've been making websites and software
+        since 2019 and adding to this website since 2025!
+        Everything on this website was written
+        without the help of AI or Graphical Interfaces. 
+        <br><br>
+        This is also some random text that I am filling in to
+        test the page content. Lets see how this looks here.</p>
+        <div class="introduction-buttons">
+            <button><img src="./Rizzo.dev_files/brain.png" alt="About Me">About</button>
+            <button><img src="./Rizzo.dev_files/hammer.png" alt="Projects" id="hammer">Projects </button>
+            <a href="http://127.0.0.1:5500/contact.html" style="text-decoration: none;"><button><img src="./Rizzo.dev_files/envelope.png" alt="Contact">Contact </button></a>
+        </div>
+    </div>
+    <div class="projects">
+        <div class="section-header"> 
+            <h1>Projects</h1>
+            <button class="see-all-button">See All</button>
+        </div>
+        <p style="color:var(--tertiary-text-color); margin-top: -10px; margin-bottom: 10px;">
+        All programming projects can be found here.</p>
+        <div class="bubble-row">
+            <div class="bubble">
+                <p style="color:var(--tertiary-text-color); font-size:16px">2023</p>
+                <p class="project-title" style="color:var(--accent-color); font-size:18px;">Generative Visual Media</p>
+                <p style="color:var(--secondary-text-color); font-size:14px">
+                A collection of algorithms for<br> generative visual media.</p>
+                <div class="bubble-button">
+                    <button class="bb">Article</button>
+                    <button class="bb">Demo</button>
+                </div>
+            </div>
+            <div class="bubble">
+                <p style="color:var(--tertiary-text-color); font-size:16px">2022</p>
+                <p class="project-title" style="color:var(--accent-color); font-size:18px">Skittle Sorter</p>
+                <p style="color:var(--secondary-text-color); font-size:14px">
+                Designed, assembled, &amp; programmed<br>a machine to sort candy by color.</p>
+                <div class="bubble-button">
+                    <button class="bb">Article</button>
+                    <button class="bb">Demo</button>
+                </div>
+            </div>
+        </div>
+        <div class="bubble-row">
+            <div class="bubble">
+                <p style="color:var(--tertiary-text-color); font-size:16px">2022</p>
+                <p class="project-title" style="color:var(--accent-color); font-size:18px">Wordle Reimagined</p>
+                <p style="color:var(--secondary-text-color); font-size:14px">
+                Recreation of the popular word game Wordle, with additional features. </p>
+                <div class="bubble-button">
+                    <button class="bb">Article</button>
+                    <button class="bb">Demo</button>
+                </div>
+            </div>
+            <div class="bubble">
+                <p style="color:var(--tertiary-text-color); font-size:16px">2022</p>
+                <p class="project-title" style="color:var(--accent-color); font-size:18px">Hotel Database</p>
+                <p style="color:var(--secondary-text-color); font-size:14px">
+                JDBC Database Management System designed to emulate the needs of a Hotel </p>
+                <div class="bubble-button">
+                    <button class="bb">Article</button>
+                    <button class="bb">Demo</button>
+                </div>
+            </div>
+        </div>
+        <div class="bubble-row">
+            <div class="bubble">
+                <p style="color:var(--tertiary-text-color); font-size:16px">2022</p>
+                <p style="color:var(--accent-color); font-size:18px">Wordle Reimagined</p>
+                <p style="color:var(--secondary-text-color); font-size:14px">
+                Recreation of the popular word game Wordle, with additional features. </p>
+                <div class="bubble-button">
+                    <button class="bb">Article</button>
+                    <button class="bb">Demo</button>
+                </div>
+            </div>
+            <div class="bubble">
+                <p style="color:var(--tertiary-text-color); font-size:16px">2022</p>
+                <p style="color:var(--accent-color); font-size:18px">Hotel Database</p>
+                <p style="color:var(--secondary-text-color); font-size:14px">
+                JDBC Database Management System designed to emulate the needs of a Hotel </p>
+                <div class="bubble-button">
+                    <button class="bb">Article</button>
+                    <button class="bb">Demo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog">
+        <div class="section-header"> 
+            <h1>Blog</h1>
+            <button class="see-all-button">See All</button>
+        </div>
+        <p style="color:var(--tertiary-text-color); margin-top: -10px; margin-bottom: 30px;">
+        Life, music, projects, and everything else.</p>
+        <div class="blog-body">
+            <button class="blog-button" style="height: 60px;">
+                <p style="color:var(--accent-color); font-size:20px">
+                A Random Blog Title: Here it Is</p>
+                <p style="margin-top: 10px; margin-bottom: 10px;">August 2025</p>
+            </button>
+            <hr style="border: none; border-top: 1px solid rgba(204, 204, 204, 0.3);">
+            <button class="blog-button" style="height: 60px;">
+                <p style="color:var(--accent-color); font-size:20px">
+                Exploring Spiritual Principles and Ideology</p>
+                <p style="margin-top: 10px; margin-bottom: 10px;">August 2025</p>
+            </button>
+            <hr style="border: none; border-top: 1px solid rgba(204, 204, 204, 0.3);">
+            <button class="blog-button" style="height: 60px;">
+                <p style="color:var(--accent-color); font-size:20px">
+                A Day in The Life of A Dude</p>
+                <p style="margin-top: 10px; margin-bottom: 10px;">July 2025</p>
+            </button>
+        </div>
+    </div>
+    
+    <div class="notes">
+        <div class="section-header"> 
+            <h1>Notes</h1>
+            <button class="see-all-button">See All</button>
+        </div>
+         <p style="color:var(--tertiary-text-color); margin-top: -10px; margin-bottom: 30px;">
+        Life, music, projects, and everything else.</p>
+        <div class="notes-body">
+            <button class="blog-button" style="height: 60px;">
+                <p style="color:var(--accent-color); font-size:20px">
+                A Random Blog Title: Here it Is</p>
+                <p style="margin-top: 10px; margin-bottom: 10px;">August 2025</p>
+            </button>
+            <hr style="border: none; border-top: 1px solid rgba(204, 204, 204, 0.3);">
+            <button class="blog-button" style="height: 60px;">
+                <p style="color:var(--accent-color); font-size:20px">
+                Exploring Spiritual Principles and Ideology</p>
+                <p style="margin-top: 10px; margin-bottom: 10px;">August 2025</p>
+            </button>
+            <hr style="border: none; border-top: 1px solid rgba(204, 204, 204, 0.3);">
+            <button class="blog-button" style="height: 60px;">
+                <p style="color:var(--accent-color); font-size:20px">
+                A Day in The Life of A Dude</p>
+                <p style="margin-top: 10px; margin-bottom: 10px;">July 2025</p>
+            </button>
+        </div>
+    </div>
+  </div>
+  <script src="./Rizzo.dev_files/script.js"></script> 
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
