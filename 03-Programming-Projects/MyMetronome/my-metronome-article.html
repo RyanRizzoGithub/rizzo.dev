@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metronome</title>
+  <link rel="stylesheet" href="metronome-article.css">
+</head>
+<body>
+<div class="article">
+    
+    <h3 style="color: var(--tertiary-text-color); margin-top: -10px; margin-bottom: -5px;">2025</h3>
+    <h1 class="">MyMetronome: <span style="font-size: smaller; font-weight: lighter;">An interactive tempo and rhythm trainer with visual animations</span></h1>
+
+    <div style="display: flex; gap: 15px;">
+        <a href="03-Programming-Projects/MyMetronome/my-metronome.html"><button>Demo</button></a>
+        <a href="https://github.com/RyanRizzoGithub/MyMetronome"><button>Source</button></a>
+    </div>
+
+    <img src="/03-Programming-Projects/MyMetronome/images/demo1.png" width="65%" style="margin-top: 5vw; display: block; margin-left: auto; margin-right: auto;">
+
+    <section class="">
+        <h2 class="">Introduction</h2>
+        <p><strong><span class="accent">MyMetronome</span></strong> is an interactive rhythm tool I developed in JavaScript using the Web Audio API. It allows users to set beats per minute (BPM), time signatures, and toggle between multiple visual animations — including a pendulum and a horizontal oscillating ball — while maintaining perfectly synced audio cues.</p>
+        <p>This project is designed as both a <strong><span class="accent">practice aid</span></strong> for musicians and a demonstration of precise audio scheduling combined with dynamic DOM animation.</p>
+    </section>
+
+    <section class="">
+        <h2 class="">How It Works</h2>
+        <p>The metronome relies on a <strong><span class="accent">scheduler function</span></strong> that uses the Web Audio API’s <code>AudioContext</code> to time clicks with high accuracy. Click tones are generated dynamically, allowing pitch changes for accented beats without preloading samples.</p>
+        <p>The program supports three animation modes:</p>
+        <ul class="">
+            <li><strong><span class="accent">Pendulum</span></strong> → A swinging pendulum synced to the beat.</li>
+            <li><strong><span class="accent">Ball Oscillator</span></strong> → A ball moving horizontally in sync with the beats.</li>
+            <li><strong><span class="accent">None</span></strong> → No animation for minimal distraction.</li>
+        </ul>
+    </section>
+
+    <section class="">
+        <h2 class="">Key Challenges</h2>
+
+        <h3 class="">Challenge 1: Precise Timing</h3>
+        <p>Maintaining consistent rhythm is essential for a metronome. To solve timing inconsistencies caused by <code>setInterval</code>, I implemented a <strong><span class="accent">scheduling system</span></strong> using <code>requestAnimationFrame</code> and look-ahead calculations based on <code>AudioContext.currentTime</code>.</p>
+
+        <h3 class="">Challenge 2: Smooth Animation</h3>
+        <p>Animating a <strong><span class="accent">pendulum</span></strong> or <strong><span class="accent">ball</span></strong> in perfect sync with the click requires dynamic transition calculations. I tied CSS transition durations directly to the BPM, ensuring visuals always match the audio rhythm.</p>
+
+        <h3 class="">Challenge 3: Dynamic Animation Modes</h3>
+        <p>The toggle between pendulum, ball, and no animation required careful <strong><span class="accent">DOM structure</span></strong> design. This mode switching had to be smooth without interrupting the beat schedule.</p>
+    </section>
+
+    <section class="">
+        <h2 class="">Interactivity</h2>
+        <p>Users can interact with the metronome in <strong><span class="accent">real-time</span></strong>, adjusting BPM and beats per measure, and switching animation modes without restarting. This makes it a powerful tool for musicians, music educators, and developers experimenting with audio-visual synchronization.</p>
+    </section>
+
+    <section class="">
+        <h2 class="">What Makes It Unique</h2>
+        <p>Unlike static metronomes, this tool combines <strong><span class="accent">high-precision audio scheduling</span></strong> with visually engaging animations. The ability to toggle animation modes and control rhythm dynamically offers a tailored experience for practicing musicians.</p>
+    </section>
+
+    <section class="">
+        <h2 class="">Conclusion</h2>
+        <p>The <strong><span class="accent">Dynamic Metronome</span></strong> is both a functional practice tool and an exploration of combining precise audio timing with modern visual animation techniques. It’s a project that merges music theory, web audio, and UI/UX design into a single interactive experience.</p>
+    </section>
+
+    <div style="display: flex; gap: 15px;">
+        <a href="03-Programming-Projects/MyMetronome/my-metronome.html"><button>Demo</button></a>
+        <a href="https://github.com/RyanRizzoGithub/MyMetronome"><button>Source</button></a>
+    </div>
+</div>
+</body>
+</html>
