@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Popularity Analysis</title>
+  <link rel="stylesheet" href="tree-generator-article.css">
+</head>
+<body>
+<div class="article">
+
+  <h3 style="color: var(--tertiary-text-color); margin-top: -10px; margin-bottom: -5px;">2025</h3>
+  <h1>Spotify Popularity Analysis (Part 1): 
+    <span style="font-size: smaller; font-weight: lighter;">
+      Exploring Genres, Artists, Keys, and Tracks
+    </span>
+  </h1>
+
+  <img src="03-Programming-Projects/Spotify-Analysis/images/banner.png" width="75%" style="margin-left: 10%;">
+
+  <section>
+    <h2>Introduction</h2>
+    <p>This study explores track popularity across <strong><span class="accent">genres</span></strong>, <strong><span class="accent">artists</span></strong>, <strong><span class="accent">keys</span></strong>, and <strong><span class="accent">songs</span></strong> using the Spotify Features dataset. By combining descriptive statistics with visualizations, we highlight trends in listening behavior, identify dominant categories, and examine whether musical attributes influence popularity.</p>
+  </section>
+
+  <img src="03-Programming-Projects/Spotify-Analysis/images/dataset.png" width="75%" style="margin-left: 10%;">
+
+  <section>
+    <h2>Genre Analysis</h2>
+    <p><strong><span class="accent">Average Popularity by Genre</span></strong> — Genres like <em>pop, rap, rock</em>, and <em>hip-hop</em> rank highest. Niche categories like <em>opera</em> or <em>anime</em> trend much lower, reflecting mainstream bias on Spotify.</p>
+    <img src="03-Programming-Projects/Spotify-Analysis/images/A1.png" width="75%" style="margin-left: 10%;">
+    <p><strong><span class="accent">Distribution of Popularity</span></strong> — Boxplots show wide spreads within <em>pop</em> and <em>rap</em>, meaning mega-hits and flops coexist in the same genre. Folk-like genres show tighter, lower distributions.</p>
+    <img src="03-Programming-Projects/Spotify-Analysis/images/A2.png" width="75%" style="margin-left: 10%;">    
+    <p><strong><span class="accent">Frequency & Proportion</span></strong> — Pie and bar charts confirm Spotify's catalog is heavily skewed toward a handful of genres, though long-tail diversity persists.</p>
+    <div style="display:flex; justify-content: center;">
+        <img src="03-Programming-Projects/Spotify-Analysis/images/A3.png" width="45%">
+        <img src="03-Programming-Projects/Spotify-Analysis/images/A4.png" width="45%">
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Artist Analysis</h2>
+    <p><strong><span class="accent">Average Popularity</span></strong> — Artists such as Pedro Capó, Mario Bautista, Mau y Ricky, Martin Garrix, and Billie Eilish lead by average popularity. Many are Latin or reggaeton, showing global streaming trends.</p>
+    <img src="03-Programming-Projects/Spotify-Analysis/images/B1.png" width="75%" style="margin-left: 10%;">
+    <p><strong><span class="accent">Distributions</span></strong> — Top artists often release many tracks, but not all are hits. Boxplots reveal broad distributions compared to the global average.</p>
+    <img src="03-Programming-Projects/Spotify-Analysis/images/B2.png" width="75%" style="margin-left: 10%;">
+    <p><strong><span class="accent">Frequency</span></strong> — Prolific output ≠ higher average popularity. Some artists dominate catalog size but not listener appeal.</p>
+    <div style="display:flex; justify-content: center;">
+        <img src="03-Programming-Projects/Spotify-Analysis/images/B3.png" width="45%">
+        <img src="03-Programming-Projects/Spotify-Analysis/images/B4.png" width="45%">
+    </div>
+  </section>
+
+  <section>
+    <h2>Musical Key Analysis</h2>
+    <p><strong><span class="accent">Average Popularity by Key</span></strong> — Keys like C#, B, F#, and G# show slightly higher averages, but differences are minimal. Musical key is not a strong predictor of popularity compared to genre or artist.</p>
+    <img src="03-Programming-Projects/Spotify-Analysis/images/C1.png" width="75%" style="margin-left: 10%;">
+    <p><strong><span class="accent">Distributions</span></strong> - Distribution of Popularity — The spread of popularity scores across keys is fairly uniform, with no key showing a distinctly wider or tighter distribution; this supports the finding that key choice has little impact on listener appeal.</p>
+    <img src="03-Programming-Projects/Spotify-Analysis/images/C2.png" width="75%" style="margin-left: 10%;">
+    <p><strong><span class="accent">Frequency</span></strong> — Keys such as C, G, and D dominate because they're easier for composition, not necessarily more popular with listeners.</p>
+    <div style="display:flex; justify-content: center;">
+        <img src="03-Programming-Projects/Spotify-Analysis/images/C3.png" width="45%">
+        <img src="03-Programming-Projects/Spotify-Analysis/images/C4.png" width="45%">
+    </div>
+  </section>
+
+  <section>
+    <h2>Track Analysis</h2>
+    <p><strong><span class="accent">Top Songs</span></strong> — Chart-toppers like <em>7 Rings</em>, <em>Wow.</em>, <em>Con Calma</em>, <em>Sunflower</em>, and <em>Thank U, Next</em> score near 100 popularity. Popularity is extremely concentrated: a handful of tracks dominate streams.</p>
+    <img src="03-Programming-Projects/Spotify-Analysis/images/D1.png" width="75%" style="margin-left: 10%;">
+  </section>
+
+  <section>
+    <h2>Comparative Distribution Analyses</h2>
+    <ul>
+      <li style="margin-bottom: 15px; margin-top: 15px;"><strong><span class="accent">Genres:</span></strong> Top 10 genres outperform catalog average.</li>
+      <img src="03-Programming-Projects/Spotify-Analysis/images/A5.png" width="75%" style="margin-left: 10%;">
+      <li style="margin-bottom: 15px; margin-top: 15px;"><strong><span class="accent">Artists:</span></strong> Top 10 by average popularity outperform; top 10 by volume may not.</li>
+      <img src="03-Programming-Projects/Spotify-Analysis/images/B5.png" width="75%" style="margin-left: 10%;">
+      <li style="margin-bottom: 15px; margin-top: 15px;"><strong><span class="accent">Keys:</span></strong> Show minimal difference from overall distribution.</li>
+      <img src="03-Programming-Projects/Spotify-Analysis/images/C5.png" width="75%" style="margin-left: 10%;">
+    </ul>
+  </section>
+
+  <section>
+    <h2>Conclusions</h2>
+    <p><strong><span class="accent">Genre and artist</span></strong> are the strongest predictors of popularity. <strong>Keys</strong> have little effect. At the track level, success is heavily concentrated in a small set of global hits.</p>
+    <p><strong><span class="accent">Caveat:</span></strong> The dataset is skewed toward popular tracks, so results may not reflect the full Spotify catalog.</p>
+  </section>
+
+  <section>
+    <h2>Next Steps</h2>
+    <ul>
+      <li><span class="accent">Time-series</span> analysis of release dates and popularity trends.</li>
+      <li><span class="accent">Clustering</span> artists by audio features (danceability, energy, valence).</li>
+      <li><span class="accent">Regression models</span> to quantify feature importance.</li>
+      <li><span class="accent">Collaboration</span> networks and centrality analysis.</li>
+    </ul>
+  </section>
+
+   <div style="display: flex; gap: 15px; margin-top: 25px;">
+    <a href="https://github.com/RyanRizzoGithub/Spotify-Pupularity-Analysis"><button>Source</button></a>
+  </div>
+
+</div>
+</body>
+</html>
